@@ -1,4 +1,4 @@
-This is a firefox/chrome addon which downloads PDFs from your nelsonnet account. The latest release can be downloaded [here](https://addurl) and can be via following
+This is a firefox/chrome addon which downloads PDFs from your nelsonnet account. The latest release can be downloaded [here](https://github.com/MyAltAccount1234/NelsonNetPDFDL/releases/latest) (Click addon.zip under Assets section) and can be via following
 one of this tutorials
 
 * [For Firefox](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
