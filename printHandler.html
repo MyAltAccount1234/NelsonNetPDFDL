@@ -1,0 +1,43 @@
+
+<div id="progressInfo">
+	<h3 id="title">Please wait while the book is created</h3>
+	<p> Once this is finished a print window will open, just fine tune some of the settings and then print (to pdf, please <strong>do not</strong> waste your ink printing the book again)</p>
+	<p>Some recommended settings</p>
+	<ul>
+		<li>scale: 100%</li>
+		<li>Paper size: A3</li>
+		<li>Margins: None</li>
+		<li>Margins: None</li>
+		<li>Print Backgrounds: True (You'll probably see nothing without this)</li>
+	</ul>
+	<p>Play around with the settings though, you want each page to fit on its own page (you can easily trim borders with other programs)</p>
+	<strong>Currently: </strong> <p id="currentTask">Getting book info</p>
+	<p>Progess bar</p><progress id="progressBar" value="0" max="100"/> 
+</div>
+<div id="books">
+
+</div>
+<style>
+body {
+ 	margin: 0;
+}
+
+#pageBreak {
+	
+}
+
+iframe {
+	frameBorder: 0;
+}
+
+@media print {
+	#progressInfo {
+		display: none;
+	}
+
+	iframe {
+		page-break-after: always;
+	}
+}
+
+</style>

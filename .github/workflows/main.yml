@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+      
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install needed packages
+        run: sudo apt install jq
+
+      - name: Get Version
+        run:  echo "VERSION=$(cat manifest.json | jq .version)" >> $GITHUB_ENV
+
+      - name: Create artifact
+        run: zip addon.zip background.js test.js manifest.json browser-polyfill.min.js printHandler.html
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        id: create_release
+        
+        with:
+          files: |
+            addon.zip
+            
+          draft: false
+          prerelease: false
+          release_name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref }}
+          
