@@ -21,7 +21,7 @@ jobs:
         run:  echo "VERSION=$(cat manifest.json | jq .version)" >> $GITHUB_ENV
 
       - name: Create artifact
-        run: zip addon.zip background.js test.js manifest.json browser-polyfill.min.js printHandler.html
+        run: zip addon.zip main.js FileSaver.min.js manifest.json jszip.min.js
 
       - name: Release
         uses: softprops/action-gh-release@v1
