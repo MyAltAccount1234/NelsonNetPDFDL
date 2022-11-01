@@ -18,8 +18,7 @@ function getCookie(cname) {
 
 browser.runtime.sendMessage({action: "getPage", file: "printHandler"}).then(page => {
 	// Do inital clear before nelson can stop me (They seem to break my script if I load too late)
-	document.body.innerHTML = ""
-	document.head.innerHTML = ""
+	document.write("<head></head><body></body>")
 	setTimeout(async () => {
 		// Replace html with our own
 		document.head.innerHTML = '<title>NelsonNet PDF converter</title>' // Kill nelsons JS
